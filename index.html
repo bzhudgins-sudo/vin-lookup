@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="VIN Lookup">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-180.png">
+  <title>VIN Lookup</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>VIN Lookup</h1>
+    <p class="sub">Pop Lock • Offline notes</p>
+  </header>
+
+  <main>
+    <section class="search-box">
+      <label for="vin">Enter VIN</label>
+      <div class="input-row">
+        <input type="text" id="vin" placeholder="17-character VIN" maxlength="17" autocomplete="off">
+        <button id="lookup-btn">Look up</button>
+      </div>
+      <p id="error" class="error"></p>
+    </section>
+
+    <section id="results" class="hidden">
+      <div class="card">
+        <h2 id="vehicle-title">—</h2>
+        <div id="vehicle-details" class="details"></div>
+      </div>
+
+      <div class="card">
+        <h3>Your notes</h3>
+        <textarea id="notes" rows="4" placeholder="Key type, IKEY used, Autel coverage, pinning notes, etc."></textarea>
+        <button id="save-notes">Save notes</button>
+        <p id="saved-msg" class="saved"></p>
+      </div>
+    </section>
+
+    <section id="history" class="hidden">
+      <h3>Recent lookups</h3>
+      <div id="history-list"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
